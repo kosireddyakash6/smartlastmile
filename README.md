@@ -97,6 +97,17 @@ AVERAGE(delivery[delivery_minutes])
 
 Delay Count = 
 CALCULATE(COUNT(delivery[id]), delivery[status] = "Late")
+**Optimization Transformations**
+The project initially used a MySQL database connected in DirectQuery mode 
+to test real-time query execution directly from the SQL source.
+
+For the final model build and performance improvement:
+- I converted the connection from DirectQuery to Import mode.
+- This reduced refresh dependency on the SQL server.
+- Improved Power BI responsiveness during visuals and DAX calculation.
+- Allowed for complex transformations using Power Query and DAX.
+
+This hybrid workflow follows best BI practices for analytics dashboards
 **Project Conclusion**
 
 This end-to-end Last-Mile Delivery Optimization project showcases how real-time delivery data can be transformed into actionable business insights using SQL, Power BI, and DAX. Through detailed KPI tracking, operational analysis, and performance measurement, the solution provides a complete analytical framework used by companies like Zepto, Swiggy Instamart, Blinkit, Dunzo, and other hyperlocal delivery platforms.
